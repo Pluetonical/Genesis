@@ -1,3 +1,2 @@
-# Genesis
-## Genesis Network Bot
-Juan is hot as shit
+# Zeqa-Bot
+hacked by peppa. peppa best ww.
