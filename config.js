@@ -1,4 +1,4 @@
-export const extraMysqlCredentials = {
+ const extraMysqlCredentials = {
     host: 'db.bit.io',
     user: 'Bulkmrslasher',
     password: 'v2_3sdm2_vVfgZfx5wjL86aVLL3AFVjs',
@@ -6,8 +6,7 @@ export const extraMysqlCredentials = {
 }
 
 //export const permLevels = ["Bot Owner","Bot Dev", "Staff", "User"]
-
-export const permLevels = [{
+const permLevels = [{
     name: 'Bot Owner',
     level: 5
 
@@ -24,14 +23,13 @@ export const permLevels = [{
     name: 'User',
     level: 2
 
-},{
-    name: '',
-    level: 0
-
 },
 ]
 
-export const partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_SCHEDULED_EVENT', 'GUILD_MEMBER', 'USER', 'CHANNEL']
+ const partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_SCHEDULED_EVENT', 'GUILD_MEMBER', 'USER', 'CHANNEL']
 const { Client, Intents } = require('discord.js');
-export const intents = [Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGE_TYPING, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_BANS, Intents.FLAGS.GUILD_MESSAGES, Intents.GUILD_WEBHOOKS, Intents.GUILD_INVITES]
-
+const intents = [Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGE_TYPING, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_BANS, Intents.FLAGS.GUILD_MESSAGES]
+const Guild = '994810515446575177'
+const channel = [{
+    rankSyncChannel: '996156218282356777'
+}]

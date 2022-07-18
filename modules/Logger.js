@@ -1,7 +1,8 @@
-import { cyan, red, magenta, gray, yellow, white, green } from "colorette";
-import { Timestamp } from "@sapphire/time-utilities";
+const { cyan, red, magenta, gray, yellow, white, green } = require("colorette");
 
-export function log(content, type = "log") {
+const { Timestamp } = require("@sapphire/time-utilities");
+
+function log(content, type = "log") {
   const timestamp = `[${cyan(new Timestamp("YYYY-MM-DD HH:mm:ss"))}]:`;
 
   switch (type) {
@@ -22,7 +23,7 @@ export function log(content, type = "log") {
   }
 }
 
-export function error(...args) { return this.log(...args, "error"); }
-export function warn(...args) { return this.log(...args, "warn"); }
-export function debug(...args) { return this.log(...args, "debug"); }
-export function cmd(...args) { return this.log(...args, "cmd"); }
+ function error(...args) { return this.log(...args, "error"); }
+ function warn(...args) { return this.log(...args, "warn"); }
+ function debug(...args) { return this.log(...args, "debug"); }
+ function cmd(...args) { return this.log(...args, "cmd"); }
