@@ -1,38 +1,33 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed, DiscordAPIError } = require("discord.js");
 const { DurationFormatter } = require("@sapphire/time-utilities");
 const durationFormatter = new DurationFormatter();
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
+const Discord = require('discord.js')
 
-exports.run = (client, message, args, level) => { // eslint-disable-line no-unused-vars
+
+exports.run = (client, message, args, level, interaction) => { // eslint-disable-line no-unused-vars
   const duration = durationFormatter.format(client.uptime);
   const talkedRecently = new Set()
-  if (db.has(message.author.id)) {
-    message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
-} else {
- console.log('worked')
-
   
-
-
-
-   // the user can type the command ... your command code goes here :)
-
-// Adds the user to the set so that they can't talk for a minute
-db.add(message.author.id, 60000);
-setTimeout(() => {
-  // Removes the user from the set after a minute
-  db.set(message.author.id, 0);
-}, 60000);
-}
-
+  if (!args[0] ) return message.channel.send("<:icons_outage:995547920587825183> | Please provide a suggestion!");
   
+   
+  const acceptbutton = new Discord.MessageActionRow().addComponents(
+    new Discord.MessageButton().setCustomId("accept").setLabel("Accept Suggestion").setStyle("SUCCESS")
+  ); 
 
- 
-setTimeout(() => {
-  // Removes the user from the set after a minute
-  talkedRecently.delete(message.author.id);
-}, 60000);
+  const denybutton = new Discord.MessageActionRow().addComponents(
+    new Discord.MessageButton().setCustomId("deny").setLabel("Deny Suggestion").setStyle("DANGER")
+  );
+    client.channels.cache.get('997638155412975697').send({embeds: [new Discord.MessageEmbed().setTitle("<:icons_star:995544904388333628> | New Suggestion").setColor("#2F3136").setDescription(`**Suggestion:** ${args[0]}`).setFooter(`Suggested By: ${message.author.username}` ).setTimestamp()], components: [acceptbutton] });
+    message.channel.send("<:icons_activities:995546445618884659> | Your suggestion has been added, check <#997638155412975697>!");
+    message.delete();
+
+    
+
+    
+    
 
 
 

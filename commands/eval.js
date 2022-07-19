@@ -18,6 +18,9 @@ async function clean(client, text) {
 }
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+  if ( message.author.id !== '817519122895339590') return message.channel.send("<:icons_outage:995547920587825183> | Only Bot Owners may execute this command!");
+  message.delete()
+
   const code = args.join(" ");
   const evaled = eval(code);
   const cleaned = await clean(client, evaled);

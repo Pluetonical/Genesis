@@ -16,6 +16,8 @@ module.exports = {
       return parsed;
     }
 
+  
+
     const button = new Discord.MessageActionRow().addComponents(
       new Discord.MessageButton().setCustomId("close_ticket").setLabel("Close Ticket").setStyle("DANGER")
     );
@@ -111,6 +113,42 @@ module.exports = {
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
               id: '990796816222150708'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168758501306379' //trainee
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168660849491998' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168551596286042' //mod
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166762650116096'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '940333451998031913'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166842291568660' // management
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '943901471282450452' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925171656022949968' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168258628321351' 
             }
             ]
           }).then(channel => {
@@ -209,6 +247,42 @@ module.exports = {
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
               id: '990796816222150708'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168758501306379' //trainee
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168660849491998' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168551596286042' //mod
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166762650116096'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '940333451998031913'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166842291568660' // management
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '943901471282450452' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925171656022949968' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168258628321351' 
             }
             ]
           }).then(channel => {
@@ -404,6 +478,42 @@ module.exports = {
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
               id: '990796816222150708'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168758501306379' //trainee
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168660849491998' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168551596286042' //mod
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166762650116096'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '940333451998031913'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166842291568660' // management
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '943901471282450452' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925171656022949968' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168258628321351' 
             }
             ]
           }).then(channel => {
@@ -453,6 +563,42 @@ module.exports = {
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
               id: '990796816222150708'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168758501306379' //trainee
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168660849491998' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168551596286042' //mod
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166762650116096'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '940333451998031913'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166842291568660' // management
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '943901471282450452' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925171656022949968' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168258628321351' 
             }
             ]
           }).then(channel => {
@@ -549,6 +695,42 @@ module.exports = {
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
               id: '990796816222150708'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168758501306379' //trainee
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168660849491998' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168551596286042' //mod
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166762650116096'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '940333451998031913'
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925166842291568660' // management
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '943901471282450452' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925171656022949968' 
+            },
+            {
+              allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+              id: '925168258628321351' 
             }
             ]
           }).then(channel => {
