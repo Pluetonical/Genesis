@@ -11,6 +11,7 @@ async function clean(client, text) {
     .replace(/`/g, "`" + String.fromCharCode(8203))
     .replace(/@/g, "@" + String.fromCharCode(8203));
 
+
   text = text.replaceAll(client.token, "[REDACTED]");
 
   return text;
@@ -22,7 +23,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   const cleaned = await clean(client, evaled);
   const embed = new Discord.MessageEmbed()
     .setTitle("Eval Job")
-    .setColor("#ffcd00")
+    .setColor("#2F3136")
     .setDescription("**Output** -\n```js\n" + cleaned + "\n```")
     .setTimestamp();
 
@@ -40,6 +41,6 @@ exports.conf = {
 exports.help = {
   name: "eval",
   category: "System",
-  description: "Evaluates javascript code & executes it",
+  description: "Evaluates Javascript Code & Executes Tt \n\n**Note:** This feature is only usuable by the bot developers",
   usage: "eval [code]"
 };

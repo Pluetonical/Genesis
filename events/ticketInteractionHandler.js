@@ -28,37 +28,37 @@ module.exports = {
 
     const row = new Discord.MessageActionRow().addComponents(new Discord.MessageSelectMenu()
       .setCustomId("ticketselection")
-      .setPlaceholder("Select an option (1-9)")
+      .setPlaceholder("Select an Option (1-5)")
       .setMaxValues(1)
       .addOptions([{
         label: "Support",
         description: "Get assistance from our staff members.",
         value: "support",
-        emoji: "1️⃣"
+        emoji: "<:icons_supportteam:995549260743454832>"
       },
       {
         label: "Appeal",
         description: "Appeal your ban/mute.",
         value: "appeal",
-        emoji: "2️⃣"
+        emoji: "<:icons_hammer:995545300552917013>"
       },
       {
         label: "Giveaway Prize",
         description: "Claim the item you won from a giveaway.",
         value: "giveaway",
-        emoji: "5️⃣"
+        emoji: "5️<:icons_tada:995551400849313815>"
       },
       {
         label: "Store",
         description: "Claim an item you purchased.",
         value: "store",
-        emoji: "6️⃣"
+        emoji: "6️<:icons_paypal:995545769488683128>"
       },
       {
         label: "Partnership",
-        description: "Apply for Zeqa partnership.",
+        description: "Apply for Genesis partnership.",
         value: "partnership",
-        emoji: "7️⃣"
+        emoji: "7️<:icons_partner:995549092908380200>"
       },
       
       
@@ -67,9 +67,11 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
       .setTitle("Create Ticket")
-      .setColor("#fec900")
+      .setColor("#2F3136")
       .setThumbnail(config.logo)
-      .setDescription("Need assistance with a specific issue you have? A question you don't know the answer of? Want to get a apply for the famous or media rank? Appeal a punishment you believe has been unfairly been given or simply want to apologize for your wrongdoing? Press the selection menu, select the option you want, follow the instructions that'll be shown & a staff member will soon contact you!\n\n**Content creator rank requirements**:\n\n**MEDIA+ RANK**\n- 🔔 **1,500** Subscribers\n- 👁️ **1000** Views in last **5** videos\n- 🎥 **30** Average live viewers (Twitch only)\n\n**MEDIA RANK**\n- 🔔 **800** Subscribers\n- 👁️ **300** Views in last **5** videos\n- 🎥 **20** Average live viewers (Twitch only)\n\n**Information regarding Zeqa's content creator ranks**:\n- Must feature Zeqa once every 3 months (5 months for Media+)\n- Content about Zeqa, with IP and port shown in the description\n- No hacking related content\n- Good reputation in the community (not just in Zeqa)\n- We **DO NOT** accept TikTokers at the moment, since TikTok's algorithm is not consistent\n\n*This information might be updated without notice, so please check this channel frequently if you're interested in these ranks!*");
+      .setDescription("**OPEN A TICKET TO:**\n<:icons_Correct:995546257923768380> Recieve Support From Staff\n<:icons_Correct:995546257923768380> Apply for Partnership\n<:icons_Correct:995546257923768380> Appeal a punishment\n<:icons_Correct:995546257923768380> Claim a Giveaway \n\n__**DONT**__ **OPEN A TICKET FOR:**\n<:icons_Wrong:995545123142254612> Ask about your application\n<:icons_Wrong:995545123142254612> Ask for permissions\n <:icons_Wrong:995545123142254612> Annoy staff members\n\nMake sure to fill out any information you can when opening a ticket.");
+      
+    
 
     if (interaction.isSelectMenu()) {
       if (interaction.values[0] === "support") {
@@ -92,7 +94,7 @@ module.exports = {
           fs.writeFile("ticketno.txt", `Ticket Number: ${(no)}`, function(err) { if (err) console.log(err); });
 
           interaction.guild.channels.create(`support-${(no).pad(4)}`, {
-            parent: "997002201870389248",
+            parent: "998719310983872632",
             type: "text",
             permissionOverwrites: [{
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "ATTACH_FILES"],
@@ -104,19 +106,19 @@ module.exports = {
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002182350094396'
+              id: '925165680184164352'
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002181116964905'
+              id: '990796816222150708'
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** support-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** support-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__SUPPORT__**").setDescription("Please describe your issue/query here, a staff member will be with you shortly.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__SUPPORT__**").setDescription("Please describe your issue/query here, a staff member will be with you shortly.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
@@ -190,7 +192,7 @@ module.exports = {
           fs.writeFile("ticketno.txt", `Ticket Number: ${(no)}`, function(err) { if (err) console.log(err); });
 
           interaction.guild.channels.create(`appeal-${(no).pad(4)}`, {
-            parent: "997002204332445797",
+            parent: "998719310983872632",
             type: "text",
             permissionOverwrites: [{
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "ATTACH_FILES"],
@@ -202,19 +204,19 @@ module.exports = {
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002182350094396'
+              id: '925165680184164352'
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002181116964905'
+              id: '990796816222150708'
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** appeal-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** appeal-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__PUNISHMENT APPEAL__**").setDescription("You may make an appeal / apology here. Please remain patient until a staff member reviews your appeal, If you think you were innocent please provide us with some evidence of you proving so.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__PUNISHMENT APPEAL__**").setDescription("You may make an appeal / apology here. Please remain patient until a staff member reviews your appeal, If you think you were innocent please provide us with some evidence of you proving so.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
@@ -311,7 +313,7 @@ module.exports = {
             interaction.message.edit({ embeds: [embed], components: [row] });
             client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** famous-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__MEDIA+ RANK APPLICATION__**").setDescription("Please send us your zeqa-exclusive video and please be patient while a staff member checks your application, please make sure you meet the following requirements:\n\n• 1,500 subscribers\n• 1000 views in your last 5 videos\n• A video on Zeqa every 5 months\n• Must not have hacking related content").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__MEDIA+ RANK APPLICATION__**").setDescription("Please send us your genesis-exclusive video and please be patient while a staff member checks your application, please make sure you meet the following requirements:\n\n• 1,500 subscribers\n• 1000 views in your last 5 videos\n• A video on genesis every 5 months\n• Must not have hacking related content").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
@@ -355,11 +357,11 @@ module.exports = {
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
             client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** media-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__MEDIA RANK APPLICATION__**").setDescription("Please send us your zeqa-exclusive video and please be patient while a staff member checks your application, please make sure you meet the following requirements:\n\n• 800 subscribers\n• 300 views in your last 5 videos\n• A video on Zeqa every 3 months\n• Must not have hacking related content").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__MEDIA RANK APPLICATION__**").setDescription("Please send us your genesis-exclusive video and please be patient while a staff member checks your application, please make sure you meet the following requirements:\n\n• 800 subscribers\n• 300 views in your last 5 videos\n• A video on Genesis every 3 months\n• Must not have hacking related content").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
@@ -385,7 +387,7 @@ module.exports = {
           fs.writeFile("ticketno.txt", `Ticket Number: ${(no)}`, function(err) { if (err) console.log(err); });
 
           interaction.guild.channels.create(`giveaway-${(no).pad(4)}`, {
-            parent: "997002206337310730",
+            parent: "998719310983872632",
             type: "text",
             permissionOverwrites: [{
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "ATTACH_FILES"],
@@ -397,19 +399,19 @@ module.exports = {
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002182350094396'
+              id: '925165680184164352'
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002181116964905'
+              id: '990796816222150708'
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** giveaway-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** giveaway-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__CLAIM GIVEAWAY PRIZE__**").setDescription("Please send us your username, a staff member will review your ticket soon.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__CLAIM GIVEAWAY PRIZE__**").setDescription("Please send us your username, a staff member will review your ticket soon.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
@@ -434,7 +436,7 @@ module.exports = {
           fs.writeFile("ticketno.txt", `Ticket Number: ${(no)}`, function(err) { if (err) console.log(err); });
 
           interaction.guild.channels.create(`store-${(no).pad(4)}`, {
-            parent: "997002245449203732",
+            parent: "998719310983872632",
             type: "text",
             permissionOverwrites: [{
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "ATTACH_FILES"],
@@ -446,49 +448,69 @@ module.exports = {
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002182350094396'
+              id: '925165680184164352'
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002181116964905'
+              id: '990796816222150708'
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** store-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** store-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__CLAIM STORE ITEM__**").setDescription("Please send us your username along with what item you need assistance with, a staff member will review your ticket soon.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__CLAIM STORE ITEM__**").setDescription("Please send us your username along with what item you need assistance with, a staff member will review your ticket soon.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
 
       if (interaction.values[0] === "giveawayrole") {
-        if (interaction.member?.roles.cache.has("998425629252911174")) {
-          interaction.member?.roles.add(client.guilds.cache.get(config.Guild).roles.cache.find(role => role.id == "946356247127552050"));
-          await interaction.reply({ content: "<:check:883326130986303511> | Successfully added the giveaway ping role to your account!", ephemeral: true });
+        if (interaction.member?.roles.cache.has("925165735288901683")) {
+          interaction.member?.roles.add(client.guilds.cache.get('925160468476207114').roles.cache.find(role => role.id == "925199959211520041"));
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | Successfully added the **giveaway-ping** role to your account!", ephemeral: true });
         } else {
-          await interaction.reply({ content: "<:cross:883326239341965332> | You need to verify your account first! Please check <#889095776192573502>.", ephemeral: true });
+          await interaction.reply({ content: "<:icons_Wrong:995545123142254612> | You need to verify your account first! Please check <#925164747014426675>.", ephemeral: true });
         }
       }
 
       if (interaction.values[0] === "sneakpeekrole") {
-        if (interaction.member?.roles.cache.has("998425629252911174")) {
-          interaction.member?.roles.add(client.guilds.cache.get('997002387334119444').roles.cache.find(role => role.id == "946502587983745065"));
-          await interaction.reply({ content: "<:check:883326130986303511> | Successfully added the sneak peek ping role to your account!", ephemeral: true });
+        if (interaction.member?.roles.cache.has("925165735288901683")) {
+          interaction.member?.roles.add(client.guilds.cache.get('925160468476207114').roles.cache.find(role => role.id == "925200070436061264"));
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | Successfully added the **sneakpeek-ping** role to your account!", ephemeral: true });
         } else {
-          await interaction.reply({ content: "<:cross:883326239341965332> | You need to verify your account first! Please check <#889095776192573502>.", ephemeral: true });
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | You need to verify your account first! Please check <#925164747014426675>.", ephemeral: true });
         }
       }
 
-      if (interaction.values[0] === "changelogsrole") {
-        if (interaction.member?.roles.cache.has("998425629252911174")) {
-          interaction.member?.roles.add(client.guilds.cache.get('997002387334119444').roles.cache.find(role => role.id == "948224256880295966"));
-          await interaction.reply({ content: "<:check:883326130986303511> | Successfully added the changelogs ping role to your account!", ephemeral: true });
+      if (interaction.values[0] === "announcementrole") {
+        if (interaction.member?.roles.cache.has("925165735288901683")) {
+          interaction.member?.roles.add(client.guilds.cache.get('925160468476207114').roles.cache.find(role => role.id == "925199838331691048"));
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | Successfully added the **announcement-ping** role to your account!", ephemeral: true });
         } else {
-          await interaction.reply({ content: "<:cross:883326239341965332> | You need to verify your account first! Please check <#889095776192573502>.", ephemeral: true });
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | You need to verify your account first! Please check <#925164747014426675>.", ephemeral: true });
         }
       }
+
+      if (interaction.values[0] === "eventrole") {
+        if (interaction.member?.roles.cache.has("925165735288901683")) {
+          interaction.member?.roles.add(client.guilds.cache.get('925160468476207114').roles.cache.find(role => role.id == "925200166171074641"));
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | Successfully added the **event-ping** role to your account!", ephemeral: true });
+        } else {
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | You need to verify your account first! Please check <#925164747014426675>.", ephemeral: true });
+        }
+      }
+
+      if (interaction.values[0] === "pollrole") {
+        if (interaction.member?.roles.cache.has("925165735288901683")) {
+          interaction.member?.roles.add(client.guilds.cache.get('925160468476207114').roles.cache.find(role => role.id == "925200269501927435"));
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | Successfully added the **poll-ping** role to your account!", ephemeral: true });
+        } else {
+          await interaction.reply({ content: "<:icons_Correct:995546257923768380> | You need to verify your account first! Please check <#925164747014426675>.", ephemeral: true });
+        } 
+      }
+
+      
 
       if (interaction.values[0] === "partnership") {
         if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
@@ -510,7 +532,7 @@ module.exports = {
           fs.writeFile("ticketno.txt", `Ticket Number: ${(no)}`, function(err) { if (err) console.log(err); });
 
           interaction.guild.channels.create(`partnership-${(no).pad(4)}`, {
-            parent: "957914524839117209",
+            parent: "998719310983872632",
             type: "text",
             permissionOverwrites: [{
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "ATTACH_FILES"],
@@ -522,19 +544,19 @@ module.exports = {
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002182350094396'
+              id: '925165680184164352'
             },
             {
               allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-              id: '997002181116964905'
+              id: '990796816222150708'
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** partnership-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** partnership-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__APPLY FOR PARTNERSHIP__**").setDescription("Please send us your event detail, type of the event, plan for the event, estimate number of attender, and other related information.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__APPLY FOR PARTNERSHIP__**").setDescription("Please send us your event detail, type of the event, plan for the event, estimate number of attender, and other related information.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
@@ -602,7 +624,7 @@ module.exports = {
           });
 
           const embed = new Discord.MessageEmbed()
-            .setColor("#fcd403")
+            .setColor("#2F3136")
             .setTitle("Ticket Transcript")
             .setThumbnail(config.logo)
             .addFields(
@@ -611,18 +633,18 @@ module.exports = {
               { name: "Closed At", value: interaction.createdAt.toLocaleString() }
             );
 
-          interaction.guild.channels.cache.get('997002407751979118').send({
+          interaction.guild.channels.cache.get('925192280267178004').send({
             embeds: [embed],
             files: [attachment]
           });
         }
 
-        interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You have pressed the `[Close Ticket]` button, the ticket will be deleted & archived after 10 seconds!")] });
+        interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You have pressed the `[Close Ticket]` button, the ticket will be deleted & archived after 10 seconds!")] });
         setTimeout(() => { interaction?.channel?.delete(); }, 10000);
       }
 
       if (interaction.customId === "claim_ticket") {
-        interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor("#fcd403").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status:** ✅ Claimed by ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [claimed] });
+        interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("#2F3136").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status:** ✅ Claimed by ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [claimed] });
 
         const connection = mysql.createConnection({
           host: config.mysqlCredentials.host,
@@ -631,7 +653,7 @@ module.exports = {
           database: config.mysqlCredentials.database
         });
 
-        const Guild = client.guilds.cache.get("997001983875616788");
+        const Guild = client.guilds.cache.get("925160468476207114");
         const member = Guild.members.cache.get(interaction.user.id);
 
         connection.connect();

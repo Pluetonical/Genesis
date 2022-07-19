@@ -15,7 +15,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   if (args[0] == "help") {
     if (args[1] == "embedresponse") {
       const embed = new Discord.MessageEmbed()
-        .setColor("#fcd403")
+        .setColor("#2F3136")
         .setTitle("Help - Embedded Response")
         .setThumbnail(config.logo)
         .setDescription("This will toggle whether or not the bot will reply for commands like z?stats and z?leaderboard with an embed or image. Note that embeds are generally sent quicker than images.")
@@ -26,7 +26,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     }
     if (args[1] == "replyping") {
       const embed = new Discord.MessageEmbed()
-        .setColor("#fcd403")
+        .setColor("#2F3136")
         .setTitle("Help - Reply Pings")
         .setThumbnail(config.logo)
         .setDescription("This will toggle whether or not the bot will ping you when responding to commands.")
@@ -37,7 +37,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     }
     if (args[1] == "reportstatusdm") {
       const embed = new Discord.MessageEmbed()
-        .setColor("#fcd403")
+        .setColor("#2F3136")
         .setTitle("Help - Report Status DM")
         .setThumbnail(config.logo)
         .setDescription("This will toggle whether or not the bot will send you a DM when a report is reviewed.")
@@ -48,7 +48,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     }
     if (args[1] == "suggestionstatusdm") {
       const embed = new Discord.MessageEmbed()
-        .setColor("#fcd403")
+        .setColor("#2F3136")
         .setTitle("Help - Suggestion Status DM")
         .setThumbnail(config.logo)
         .setDescription("This will toggle whether or not the bot will send you a DM when a suggestion is reviewed.")
@@ -61,49 +61,49 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 
   if (args[0] == "embedresponse" && args[1] == "enable" || args[0] == "embedresponse" && args[1] == "on" || args[0] == "embeddedresponse" && args[1] == "on" || args[0] == "embeddedresponse" && args[1] == "on" ) {
     extraConnection.query(`UPDATE DiscordData SET embedresponse = 1 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> | Embedded response has been **enabled**!");
+      message.reply("<:icons_Correct:995546257923768380> | Embedded response has been **enabled**!");
     });
     return;
   }
   if (args[0] == "embedresponse" && args[1] == "disable" || args[0] == "embedresponse" && args[1] == "off" || args[0] == "embeddedresponse" && args[1] == "on" || args[0] == "embeddedresponse" && args[1] == "on" ) {
     extraConnection.query(`UPDATE DiscordData SET embedresponse = 0 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> | Embedded response has been **disabled**!");
+      message.reply("<:icons_Correct:995546257923768380> | Embedded response has been **disabled**!");
     });
     return;
   }
   if (args[0] == "replyping" && args[1] == "enable" || args[0] == "replyping" && args[1] == "on") {
     extraConnection.query(`UPDATE DiscordData SET replyping = 1 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> | Reply pings have been **enabled**!");
+      message.reply("<:icons_Correct:995546257923768380> | Reply pings have been **enabled**!");
     });
     return;
   }
   if (args[0] == "replyping" && args[1] == "disable" || args[0] == "replyping" && args[1] == "off") {
     extraConnection.query(`UPDATE DiscordData SET replyping = 0 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> | Reply pings have been **disabled**!");
+      message.reply("<:icons_Correct:995546257923768380> | Reply pings have been **disabled**!");
     });
     return;
   }
   if (args[0] == "reportstatusdm" && args[1] == "enable" || args[0] == "reportstatusdm" && args[1] == "on") {
     extraConnection.query(`UPDATE DiscordData SET reportstatusdm = 1 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> | Report Status DM has been **enabled**!");
+      message.reply("<:icons_Correct:995546257923768380> | Report Status DM has been **enabled**!");
     });
     return;
   }
   if (args[0] == "reportstatusdm" && args[1] == "disable" || args[0] == "reportstatusdm" && args[1] == "off") {
     extraConnection.query(`UPDATE DiscordData SET reportstatusdm = 0 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> |  Report Status DM has been **disabled**!");
+      message.reply("<:icons_Correct:995546257923768380> |  Report Status DM has been **disabled**!");
     });
     return;
   }
   if (args[0] == "suggestionstatusdm" && args[1] == "enable" || args[0] == "suggestionstatusdm" && args[1] == "on") {
     extraConnection.query(`UPDATE DiscordData SET suggestionstatusdm = 1 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> | Suggestion Status DM has been **enabled**!");
+      message.reply("<:icons_Correct:995546257923768380> | Suggestion Status DM has been **enabled**!");
     });
     return;
   }
   if (args[0] == "suggestionstatusdm" && args[1] == "disable" || args[0] == "suggestionstatusdm" && args[1] == "off") {
     extraConnection.query(`UPDATE DiscordData SET suggestionstatusdm = 0 WHERE id = ${message.author.id}`, function() {
-      message.reply("<:check:883326130986303511> | Suggestion Status DM has been **disabled**!");
+      message.reply("<:icons_Correct:995546257923768380> | Suggestion Status DM has been **disabled**!");
     });
     return;
   }
@@ -115,29 +115,29 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     let content = "";
 
     if (data[0].embedresponse == 1) {
-      content += "**Embedded Response**: <:check:883326130986303511>\n";
+      content += "**Embedded Response**: <:icons_Correct:995546257923768380>\n";
     } else {
-      content += "**Embedded Response**: <:cross:883326239341965332>\n";
+      content += "**Embedded Response**: <:icons_Wrong:995545123142254612>\n";
     }
     if (data[0].replyping == 1) {
-      content += "**Reply Pings**: <:check:883326130986303511>\n";
+      content += "**Reply Pings**: <:icons_Correct:995546257923768380>\n";
     } else {
-      content += "**Reply Pings**: <:cross:883326239341965332>\n";
+      content += "**Reply Pings**: <:icons_Wrong:995545123142254612>\n";
     }
     if (data[0].reportstatusdm == 1) {
-      content += "**Report Status DM**: <:check:883326130986303511>\n";
+      content += "**Report Status DM**: <:icons_Correct:995546257923768380>\n";
     } else {
-      content += "**Report Status DM**: <:cross:883326239341965332>\n";
+      content += "**Report Status DM**: <:icons_Wrong:995545123142254612>\n";
     }
     if (data[0].suggestionstatusdm == 1) {
-      content += "**Suggestion Status DM**: <:check:883326130986303511>\n";
+      content += "**Suggestion Status DM**: <:icons_Correct:995546257923768380>\n";
     } else {
-      content += "**Suggestion Status DM**: <:cross:883326239341965332>\n";
+      content += "**Suggestion Status DM**: <:icons_Wrong:995545123142254612>\n";
     }
 
     const user = client.guilds.cache.get(config.Guild).members.cache.find(m => m.user.tag == message.author.tag);
     const embed = new Discord.MessageEmbed()
-      .setColor("#fcd403")
+      .setColor("#2F3136")
       .setTitle(`Bot Settings - ${message.author.tag}`)
       .setThumbnail(`http://api.zeqa.net/api/players/avatars/${user.displayName.replace(" ", "%20")}`)
       .setDescription(content)
@@ -149,7 +149,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: [],
   permLevel: "User"
 };

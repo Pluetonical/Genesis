@@ -19,7 +19,7 @@ module.exports = {
     extraConnection.connect();
 
     if (interaction.customId === "accept_report") {
-      interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Player Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "Status - <:check:883326130986303511>")).setFooter(interaction.message.embeds[0].footer.text)], components: [] });
+      interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Player Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "Status - <:icons_Correct:995546257923768380>")).setFooter(interaction.message.embeds[0].footer.text)], components: [] });
       extraConnection.query(`SELECT reportstatusdm FROM DiscordData WHERE id = ${interaction.member.user.id}`, function(err, res) {
         if (err) throw err;
         const data = JSON.parse(JSON.stringify(res));
@@ -28,8 +28,8 @@ module.exports = {
           const discordAccount = interaction.client.guilds.cache.get('997001983875616788').members.cache.find(m => m.user.id == interaction.message.embeds[0].footer.text);
           
           const embed = new Discord.MessageEmbed()
-            .setColor("#fcd403")
-            .setTitle("Zeqa - Player Report Status")
+            .setColor("#2F3136")
+            .setTitle("Genesis - Player Report Status")
             .setThumbnail(config.logo)
             .setDescription("Hello, thank you for submitting a player report! We have reviewed your report and have decided to **accept** it!")
             .addFields(
@@ -45,7 +45,7 @@ module.exports = {
       const uid = customAlphabet("1234567890abcdefghijklmnopqrstuvxyz", 10);
       const reportID = uid();
 
-      interaction.update({ content: `ID: ${reportID}`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Player Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "Status - <:cross:883326239341965332>")).setFooter(interaction.message.embeds[0].footer.text)], components: [] });
+      interaction.update({ content: `ID: ${reportID}`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Player Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "Status - <:cross:883326239341965332>")).setFooter(interaction.message.embeds[0].footer.text)], components: [] });
       extraConnection.query(`SELECT reportstatusdm FROM DiscordData WHERE id = ${interaction.member.user.id}`, function(err, res) {
         if (err) throw err;
         const data = JSON.parse(JSON.stringify(res));
@@ -54,8 +54,8 @@ module.exports = {
           const discordAccount = interaction.client.guilds.cache.get('997001983875616788').members.cache.find(m => m.user.id == interaction.message.embeds[0].footer.text);
           
           const embed = new Discord.MessageEmbed()
-            .setColor("#fcd403")
-            .setTitle("Zeqa - Player Report Status")
+            .setColor("#2F3136")
+            .setTitle("Genesis - Player Report Status")
             .setThumbnail('')
             .setDescription("Hello, thank you for submitting a player report! Though, unfortunately, we have reviewed your report and have decided to **deny** it.")
             .addFields(
@@ -74,15 +74,15 @@ module.exports = {
       });
     }    
     if (interaction.customId === "accept_bug_report") {
-      interaction.guild.channels.cache.get('997001983875616788').send({ content: "> Confirmed bug report", embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New bug report").setColor("#ffcd00").setDescription(`${interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "")}\n[Go to bug report](https://discord.com/channels/${interaction.guild.id}/${interaction.channel.id}/${interaction.message.id})`).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()] });
-      interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Bug Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "**Status** - <:check:883326130986303511>")).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
+      interaction.guild.channels.cache.get('997001983875616788').send({ content: "> Confirmed bug report", embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New bug report").setColor("#2F3136").setDescription(`${interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "")}\n[Go to bug report](https://discord.com/channels/${interaction.guild.id}/${interaction.channel.id}/${interaction.message.id})`).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()] });
+      interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Bug Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "**Status** - <:icons_Correct:995546257923768380>")).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
     }
     if (interaction.customId === "deny_bug_report") {
-      interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Bug Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "**Status** - <:cross:883326239341965332>")).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
+      interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Bug Report").setColor(0xffcd00).setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "**Status** - <:cross:883326239341965332>")).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
     }
     if (interaction.customId === "accept_suggestion") {
-      interaction.guild.channels.cache.get('997001983875616788').send({ embeds: [new Discord.MessageEmbed().setColor(0xffcd00).setTitle("<:atlanta_folder:601019084468912129> New Suggestion").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "")).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [], fetchReply: true }).then(msg => {
-        msg.react("<:check:883326130986303511>");
+      interaction.guild.channels.cache.get('997001983875616788').send({ embeds: [new Discord.MessageEmbed().setColor(0xffcd00).setTitle("<:icons_folder:995548354530517142> New Suggestion").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "")).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [], fetchReply: true }).then(msg => {
+        msg.react("<:icons_Correct:995546257923768380>");
         msg.react("<:cross:883326239341965332>");
         msg.startThread({
           name: "Comments",
@@ -90,7 +90,7 @@ module.exports = {
           reason: `Suggestion: ${interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), "")}`,
         });
       });
-      interaction.update({ embeds: [new Discord.MessageEmbed().setColor(0xffcd00).setTitle("<:atlanta_folder:601019084468912129> Accepted Suggestion").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status** - <:check:883326130986303511>\n\n**Accepted By** - ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
+      interaction.update({ embeds: [new Discord.MessageEmbed().setColor(0xffcd00).setTitle("<:icons_folder:995548354530517142> Accepted Suggestion").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status** - <:icons_Correct:995546257923768380>\n\n**Accepted By** - ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
       extraConnection.query(`SELECT suggestionstatusdm FROM DiscordData WHERE id = ${interaction.member.user.id}`, function(err, res) {
         if (err) throw err;
         const data = JSON.parse(JSON.stringify(res));
@@ -99,8 +99,8 @@ module.exports = {
           const discordAccount = interaction.client.guilds.cache.get('997001983875616788').members.cache.find(m => m.user.id == interaction.message.embeds[0].footer.text);
           
           const embed = new Discord.MessageEmbed()
-            .setColor("#fcd403")
-            .setTitle("Zeqa - Suggestion Status")
+            .setColor("#2F3136")
+            .setTitle("Genesis - Suggestion Status")
             .setThumbnail(config.logo)
             .setDescription(`Hello, thank you for submitting a suggestion! We have reviewed your suggestion and have decided to **accept** it!\n\n\n${interaction.message.embeds[0].description.toString()}`)
             .setFooter("You can disable this DM notification using z?settings.");
@@ -113,7 +113,7 @@ module.exports = {
       const uid = customAlphabet("1234567890abcdefghijklmnopqrstuvxyz", 10);
       const sugestionID = uid();
 
-      interaction.update({ content: `ID: ${sugestionID}`, embeds: [new Discord.MessageEmbed().setColor(0xffcd00).setTitle("<:atlanta_folder:601019084468912129> New Suggestion").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status** - <:cross:883326239341965332>\n\n**Denied By** - ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
+      interaction.update({ content: `ID: ${sugestionID}`, embeds: [new Discord.MessageEmbed().setColor(0xffcd00).setTitle("<:icons_folder:995548354530517142> New Suggestion").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status** - <:cross:883326239341965332>\n\n**Denied By** - ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [] });
       extraConnection.query(`SELECT suggestionstatusdm FROM DiscordData WHERE id = ${interaction.member.user.id}`, function(err, res) {
         if (err) throw err;
         const data = JSON.parse(JSON.stringify(res));
@@ -122,7 +122,7 @@ module.exports = {
           const discordAccount = interaction.client.guilds.cache.get('997001983875616788').members.cache.find(m => m.user.id == interaction.message.embeds[0].footer.text);
           
           const embed = new Discord.MessageEmbed()
-            .setColor("#fcd403")
+            .setColor("#2F3136")
             .setTitle("Genesis - Suggestion Status")
             .setThumbnail(config.logo)
             .setDescription("Hello, thank you for submitting a suggestion! Though, unfortunately, we have reviewed your suggestion and have decided to **deny** it.")

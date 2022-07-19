@@ -10,7 +10,7 @@ module.exports = {
       const args = message.content.split(" {SPLIT} ");
       const discordAccount = client.guilds.cache.get('997001983875616788').members.cache.find(m => m.user.tag == args[1]?.toString());
             
-      discordAccount?.send(`Hello, ${discordAccount}!\n**${args[0].toString()}** has requested to associate your Discord account with their Zeqa account.\n\nPlease react with ✅ if you would like to continue and ❎ if you wouldn't like to do so.\n\n**Please respond within 5 minutes else the verification process will be automatically aborted.**`).then(botMessage => {
+      discordAccount?.send(`Hello, ${discordAccount}!\n**${args[0].toString()}** has requested to associate your Discord account with their Genesis account.\n\nPlease react with ✅ if you would like to continue and ❎ if you wouldn't like to do so.\n\n**Please respond within 5 minutes else the verification process will be automatically aborted.**`).then(botMessage => {
         botMessage.react("✅");
         botMessage.react("❎");
 

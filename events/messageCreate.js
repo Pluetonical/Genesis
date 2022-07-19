@@ -1,5 +1,41 @@
-const { getSettings, permlevel } = require("../modules/functions.js");
+const { Guild } = require("discord.js");
+const { getSettings} = require("../modules/functions.js");
+const permLevels = [{
+  name: 'Bot Owner',
+  level: 5,
+  guildOnly: true
 
+},
+{
+  name: 'Bot Dev',
+  level: 4,
+  guildOnly: true
+
+},{
+  name: 'Staff',
+  level: 3,
+  guildOnly: true
+},{
+  name: 'User',
+  level: 0,
+  guildOnly: false
+
+},
+]
+function permlevel(message) {
+  let permlvl = 0;
+  const permOrder = permLevels.slice(0).sort((p, c) => p.level < c.level ? 1 : -1);
+
+  while (permOrder.length) {
+    const currentLevel = permOrder.shift();
+    if (message.guild && currentLevel.guildOnly) continue;
+    if (currentLevel) {
+      permlvl = currentLevel.level;
+      break;
+    }
+  }
+  return permlvl;
+}
 module.exports = {
   name: "messageCreate",
   once: false,
@@ -27,8 +63,19 @@ module.exports = {
 
     if (!cmd) return;
 
-    if (cmd && !message.guild && cmd.conf.guildOnly)
-      return message.channel.send("<:cross:883326239341965332> | Please run this command in the offical Zeqa server instead - https://discord.gg/zeqa");
+    if (cmd && cmd.conf.guildOnly && message.guild.id != '997001983875616788') 
+    return message.channel.send(" Please run this command in Genesis Network instead - discord.gg/cosmicpe");
+    //bot role id = 990796816222150708
+   
+
+    const ecmd = message.content.substring(1, 4)
+    const scmd = message.content.substring(1, 8)
+    const sscmd = message.content.substring(1, 2)
+    if (message.content.search('eval') === true && message.author.id != '583772029228941334' )
+      return message.channel.send(":lock: **Only the bot Owners may run this command!**"); 
+    
+    //if (args[0] = 'eval' && message.author.id != '583772029228941334' || message.author.id != '817519122895339590') 
+     // return message.channel.send(":lock: **Only the bot Owners may run this command!**"); 
 
     if (!cmd.conf.enabled) return;
 

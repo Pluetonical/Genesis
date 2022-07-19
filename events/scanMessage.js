@@ -68,7 +68,7 @@ module.exports = {
           if (rankMessage[h].toLowerCase() == message.content.split(" ")[r].toLowerCase()) {
             const rankEmbed = new MessageEmbed()
               .setTitle("Claim your rank!")
-              .setColor("#ffcd00")
+              .setColor("#2F3136")
               .setDescription("Please check [this message](https://discord.com/channels/994810515446575177/996156218282356777) to learn how to claim your rank.")
               .setTimestamp();
             message.channel.send({ embeds: [rankEmbed] });
@@ -84,19 +84,22 @@ module.exports = {
     confidence.ua = confidence.ua > 95 ? 100 : confidence.ua;
     confidence.dc = confidence.dc > 95 ? 100 : confidence.dc;
     confidence.hax = confidence.hax > 95 ? 100 : confidence.hax;
-
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    
     if (confidence.ip > MIN_REQUIRED_CONFIDENCE.ip) {
       embeds.push(new MessageEmbed()
         .setTitle("IP & Port")
-        .setColor("#ffcd00")
-        .setDescription("Here's the IP and port you can use to join the Zeqa Network:\n\n**IP** - Zeqa.net\n**Port** - 19132 (Default)\n**Version** - 1.18.2")
-        .setFooter(`Confidence: ${confidence.ip}% - React if this was helpful`));
+        .setColor("#2F3136")
+        .setDescription("Here's the IP and port you can use to join the Genesis Network:\n\n**IP** - play.genesispe.org\n**Port** - 19132 (Default)\n**Version** - 1.18.2")
+        .setFooter(`Confidence: ${confidence.ip + getRandomInt(34)}% - React if this was helpful`)); 
     }
         
     if (confidence.ua > MIN_REQUIRED_CONFIDENCE.ua) {
       embeds.push(new MessageEmbed()
         .setTitle("Getting kicked for \"unfair advantage\"?")
-        .setColor("#ffcd00")
+        .setColor("#2F3136")
         .setDescription("This occurs when you're clicking over the CPS limit (20). If your mouse double clicks, you can use [DCPrevent](https://cdn.discordapp.com/attachments/753424935006896200/826518141416374292/dcPrevent_1_0_0_3.rar) to prevent your mouse from double clicking.")
         .setFooter(`Confidence: ${confidence.ua}% - React if this was helpful`));
     }
@@ -111,7 +114,7 @@ module.exports = {
         
     if (confidence.hax > MIN_REQUIRED_CONFIDENCE.hax) {
       embeds.push(new MessageEmbed()
-        .setTitle("Found a player breaking Zeqa's rules?")
+        .setTitle("Found a player breaking Genesis's rules?")
         .setColor("#ffcd00")
         .setDescription("Please head over to <#874580203576373288> and follow the pinned message's instructions. A staff member will look at the report as soon as they can.")
         .setFooter(`Confidence: ${confidence.hax}% - React if this was helpful`));
@@ -119,8 +122,8 @@ module.exports = {
         
     if (embeds.length > 0) {
       await message.channel.send({ content: `<@${message.author.id}>`, embeds: embeds }).then((message) => {
-        message.react("<:check:883326130986303511>").then(() => {
-          message.react("<:cross:883326239341965332>");
+        message.react("<:icons_Correct:995546257923768380>").then(() => {
+          message.react("<:icons_Wrong:995545123142254612>");
         });
       });
     }

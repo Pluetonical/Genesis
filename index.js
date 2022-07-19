@@ -19,7 +19,7 @@ const permLevels = [{
 
 },{
   name: 'User',
-  level: 2
+  level: 0
 
 },
 ]
@@ -66,7 +66,7 @@ const init = async () => {
   ticketOpenCooldown = [];
 
   client.on("threadCreate", (thread) => thread.join());
-  client.login('OTk1OTE4MTYzMTM5MTEzMDAx.GOfHQu.Wj7BYHTnnj32WQs9pUTs4HeIGmUYR-bkP4hQfA');
+  client.login('OTk1OTE4MTYzMTM5MTEzMDAx.GNVNFc.cieQXg6-EyUB5Zk4K1cjRurfCaqkpuVR574-3I');
 };
 init()
 // Login to Discord with your client's token

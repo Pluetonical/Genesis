@@ -1,5 +1,5 @@
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
-  await message.reply("<:check:883326130986303511> | Shutting down...");
+  await message.reply("<:icons_Correct:995546257923768380> | Shutting down...");
   await Promise.all(client.container.commands.map(cmd => {
     delete require.cache[require.resolve(`./${cmd.help.name}.js`)];
     client.container.commands.delete(cmd.help.name);
@@ -11,12 +11,12 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ["sd"],
-  permLevel: "Bot Owner"
+  permLevel: 5
 };
 
 exports.help = {
   name: "shutdown",
   category: "System",
-  description: "Shuts down the bot",
+  description: "Shuts Down The Bot \n\n**Note:** This command can only be used by the **Bot Developers**",
   usage: "shutdown"
 };

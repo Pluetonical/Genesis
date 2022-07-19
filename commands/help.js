@@ -27,7 +27,7 @@ exports.run = (client, message, args, level) => {
     const embed = new MessageEmbed()
       .setTitle(`Commands - use ${prefix}help <command> for more info on a command`)
       .setThumbnail(config.logo)
-      .setColor("#ffcd00")
+      .setColor("#2F3136")
       .setDescription(output)
       .setTimestamp();
 
@@ -39,7 +39,7 @@ exports.run = (client, message, args, level) => {
       if (level < container.levelCache[command.conf.permLevel]) return;
       const embed = new MessageEmbed()
         .setTitle(`Command Information - ${command.help.name}`)
-        .setColor("#ffcd00")
+        .setColor("#2F3136")
         .setDescription(`${command.help.description}\n\nUsage: ${command.help.usage}\n\nAliases: ${command.conf.aliases.length > 0 ? command.conf.aliases.join(", ") : "None"}`)
         .setTimestamp();
 
@@ -50,7 +50,7 @@ exports.run = (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: [],
   permLevel: "User"
 };
@@ -58,6 +58,6 @@ exports.conf = {
 exports.help = {
   name: "help",
   category: "Basic",
-  description: "Displays all commands you can use",
+  description: "Displays All Commands You Can Use \n\n**Note:** Some commands may not work",
   usage: "help [command]"
 };
