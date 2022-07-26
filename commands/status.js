@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const config = require("../config.js");
 const request = require("request");
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
-   module
     request.get({
         url: "https://api.mcsrvstat.us/bedrock/2/play.genesispe.org:19132",
         json: true,
@@ -21,17 +20,15 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
             const embed = new Discord.MessageEmbed()
                 .setColor("#2F3136")
                 .setTitle("Genesis - Server Status")
-                .setThumbnail(config.logo)
                 .setDescription("Here are the current Genesis Factions server Stats!")
-                .addField(`Status: **Online**`)
-                .addField(`Player's online: **${playersOnline}**`)
-                .addField(`Ip: play.genesispe.org`)
-                .addField(`Port: 19132 (default)`)
-                .createdAt(date)
+                .addField(`Server Status:`, `**Online**`)
+                .addField(`Player's Online: `, `**${playersOnline}**`)
+                .addField(`IP: `, 'play.genesispe.org', true)
+                .addField(`Port: `, '19132', true)
                 .setFooter(`Command requested by ${message.author.tag}`, message.author.displayAvatarURL());
 
             
-  
+                message.reply({ embeds: [embed] });
             
           } else {
             const playersOnline = data.players.online;
@@ -46,7 +43,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         
       });
 
-      message.reply({ embeds: [embed] });
+      
     
 
   

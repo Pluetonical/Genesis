@@ -13,14 +13,34 @@ exports.run = (client, message, args, level, interaction) => { // eslint-disable
   if (!args[0] ) return message.channel.send("<:icons_outage:995547920587825183> | Please provide a suggestion!");
   
    
-  const acceptbutton = new Discord.MessageActionRow().addComponents(
-    new Discord.MessageButton().setCustomId("accept").setLabel("Accept Suggestion").setStyle("SUCCESS")
+  const button = new Discord.MessageActionRow().addComponents(
+    new Discord.MessageButton().setCustomId("acceptsuggest").setLabel("Accept Suggestion").setStyle("SUCCESS"),
+    new Discord.MessageButton().setCustomId("denysuggest").setLabel("Deny Suggestion").setStyle("DANGER"),
+    new Discord.MessageButton().setCustomId("upvote").setEmoji('<:icons_upvote:995545071795572758>').setLabel("Up Vote").setStyle("SECONDARY"),
+    new Discord.MessageButton().setCustomId("downvote").setEmoji('<:icons_downvote:995546425704333322>').setLabel("Down Vote").setStyle("SECONDARY")
   ); 
 
   const denybutton = new Discord.MessageActionRow().addComponents(
     new Discord.MessageButton().setCustomId("deny").setLabel("Deny Suggestion").setStyle("DANGER")
+  )
+
+  const votebutton = new Discord.MessageActionRow().addComponents(
+    new Discord.MessageButton().setCustomId("upvote").setLabel("<:icons_upvote:995545071795572758> UpVote").setStyle("SECONDARY"),
+    new Discord.MessageButton().setCustomId("downvote").setLabel("<:icons_downvote:995546425704333322> DownVote").setStyle("SECONDARY")
   );
-    client.channels.cache.get('997638155412975697').send({embeds: [new Discord.MessageEmbed().setTitle("<:icons_star:995544904388333628> | New Suggestion").setColor("#2F3136").setDescription(`**Suggestion:** ${args[0]}`).setFooter(`Suggested By: ${message.author.username}` ).setTimestamp()], components: [acceptbutton] });
+  const downvotebutton = new Discord.MessageActionRow().addComponents(
+    new Discord.MessageButton().setCustomId("downvote").setLabel("<:icons_downvote:995546425704333322> DownVote").setStyle("SECONDARY")
+  )
+  console.log(args) 
+    client.channels.cache.get('997638155412975697').send({embeds: [{author:{
+      name: 'New Suggestion'
+  },color: '#2F3136',timestamp: new Date(),footer:{
+      text: `Suggested by ${message.author.tag}`
+  },description: `**Suggestion: \`\`\` ${args.join(' ')} \`\`\`**`,fields:[
+      {name:"<:icons_upvote:995545071795572758> Up votes:",value:"```\n0```",inline:true},
+      {name:"<:icons_downvote:995546425704333322> Down votes:",value:"```\n0```",inline:true},
+      {name: `Created`, value: `<t:${Math.trunc(Date.now() / 1000)}:R>`}
+  ]}], components: [button]});
     message.channel.send("<:icons_activities:995546445618884659> | Your suggestion has been added, check <#997638155412975697>!");
     message.delete();
 

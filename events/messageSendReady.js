@@ -1,6 +1,8 @@
 const config = require("../config.js");
 const Discord = require("discord.js");
 
+
+
 module.exports = {
   name: "ready",
   once: true,
@@ -13,6 +15,10 @@ module.exports = {
     const roleCollection = await roleChannel.messages.fetch();
     const verifychannel = await client.guilds.cache.get('925160468476207114').channels.fetch('925164747014426675');
     const verifyCollection = await verifychannel.messages.fetch();
+
+ 
+
+    
     //Verify message
     if (verifyCollection.size === 0 ) {
       const embed = new Discord.MessageEmbed()
@@ -20,8 +26,13 @@ module.exports = {
       .setColor('#2F3136')
       .setImage('https://discord.com/channels/@me/997735117445419118/998435623734095894')
       .setDescription('Please verify here to gain access to our discord!')
+      .addField('**Please React to atleast one role to limit everyone pings!**', '<#925162992767729755>')
+      const button = new Discord.MessageActionRow().addComponents(
+        new Discord.MessageButton().setCustomId("verify").setEmoji('<:icons_colorserververified:995546207361441793>').setLabel("Verify").setStyle("SUCCESS")
+      )
       verifychannel.send({
-        embeds: [embed]
+        embeds: [embed],
+        components: [button]
       })
     }
     //Normal Ticket Message 
@@ -67,7 +78,7 @@ module.exports = {
         .setTitle("Create Ticket")
         .setColor("#2F3136")
         .setThumbnail(config.logo)
-        .setDescription("**OPEN A TICKET TO:**\n<:icons_Correct:995546257923768380> Recieve Support From Staff\n<:icons_Correct:995546257923768380> Apply for Partnership\n<:icons_Correct:995546257923768380> Appeal a punishment\n<:icons_Correct:995546257923768380> Claim a Giveaway \n\n__**DONT**__ **OPEN A TICKET FOR:**\n<:icons_Wrong:995545123142254612> Ask about your application\n<:icons_Wrong:995545123142254612> Ask for permissions\n <:icons_Wrong:995545123142254612> Annoy staff members\n\nMake sure to fill out any information you can when opening a ticket.");
+        .setDescription("**OPEN A TICKET TO:**\n<:icons_Correct:995546257923768380> Recieve Support From Staff\n<:icons_Correct:995546257923768380> Apply for Partnership\n<:icons_Correct:995546257923768380> Appeal a punishment\n<:icons_Correct:995546257923768380> Claim a Giveaway \n\n__**DONT**__ **OPEN A TICKET FOR:**\n<:icons_Wrong:995545123142254612> Ask about your application\n<:icons_Wrong:995545123142254612> Ask for permissions\n<:icons_Wrong:995545123142254612> Annoy staff members\n\nMake sure to fill out any information you can when opening a ticket.");
 
       ticketChannel.send({
         embeds: [embed],

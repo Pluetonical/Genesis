@@ -1,48 +1,54 @@
 const config = require("../config.js");
 const mysql = require("mysql");
+const Discord = require('discord.js');
+const { TimerManager } = require("@sapphire/time-utilities");
+const fs = require('fs');
+
+
+const logger = fs.createWriteStream('log.txt', {
+    flags: 'a' // 'a' means appending (old data will be preserved)
+  })
+const writeLine = (line) => logger.write(`\n${line}`);
+
 
 module.exports = {
   name: "guildMemberUpdate",
   once: false,
   async execute(oldMember, newMember) {
-    function checkForSpace() {
-      if (oldMember.displayName.includes(" ")) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    const extraConnection = mysql.createConnection({
-      host: config.extraMysqlCredentials.host,
-      user: config.extraMysqlCredentials.user,
-      password: config.extraMysqlCredentials.password,
-      database: config.extraMysqlCredentials.database
-    });
-
-    const oldStatus = oldMember.premiumSince;
-    const newStatus = newMember.premiumSince;
-
-    //Informs user that they can claim their rank
-    if (!oldStatus && newStatus) {
-      newMember.client.channels.cache.get("997002375162253382").send(`Hey ${newMember}, thanks for boosting the server!\n\nYou can claim your exclusive in-game Booster rank by running \`z?booster\` in <#874578975391883274>!`);
-    }
-
-    //Removes user's rank if they unboost
-    if (oldStatus && !newStatus) {
-      if (checkForSpace() == true) {
-        extraConnection.query(`UPDATE PlayersData SET isboost = 0 WHERE name = "${oldMember.displayName}"`, function(err) {
-          if (err) throw err;
-          oldMember.client.channels.cache.get('997002405193465906').send(`${oldMember} / ${oldMember.displayName}'s booster rank was removed - they unboosted the server`);
-          oldMember.client.channels.cache.get("997002405193465906").send(`/setrank "${oldMember.displayName}" Player`);
-        });
-      } else {
-        extraConnection.query(`UPDATE PlayersData SET isboost = 0 WHERE name = "${oldMember.displayName}"`, function(err) {
-          if (err) throw err;
-          oldMember.client.channels.cache.get('997002405193465906').send(`${oldMember} / ${oldMember.displayName}'s booster rank was removed - they unboosted the server`);
-          oldMember.client.channels.cache.get("997002405193465906").send(`/setrank ${oldMember.displayName} Player`);
-        });
-      }
-    }
+    const oldRoles = await oldMember.roles.cache
+    const newRoles = await newMember.roles.cache
+   
+    for (let role of newRoles) {
+      if (!oldRoles.has(role[0])) {
+      newMember.guild.channels.cache.get('925192125434449980').send({embeds: [{author:{
+        name: 'New Role Added'
+    },color: '#2F3136',timestamp: new Date() ,fields:[
+        {name:"Role:",value: `${role[1]}`},
+        {name:"User:",value: `${newMember}`},
+        {name: `Added`, value: `<t:${Math.trunc(Date.now() / 1000)}:R>`}
+    ]}]});
+    writeLine(`Role added: [Username: ${newMember.tag}, UserID: ${newMember.id}, Role: ${role[0]}]`)
   }
+     
+    }
+
+    for (let role of oldRoles) {
+      if (!newRoles.has(role[0])) {
+      newMember.guild.channels.cache.get('925192125434449980').send({embeds: [{author:{
+        name: 'New Role Removed'
+    },color: '#2F3136',timestamp: new Date() ,fields:[
+        {name:"Role:",value: `${role[1]}`},
+        {name:"User:",value: `${newMember}`},
+        {name: `Removed`, value: `<t:${Math.trunc(Date.now() / 1000)}:R>`}
+    ]}]});
+    writeLine(`Role removed: [Username: ${newMember.tag}, UserID: ${newMember.id}, Role: ${role[0]}]`)
+  }
+     
+    }
+    
+
+    
+    }
+
 };
+

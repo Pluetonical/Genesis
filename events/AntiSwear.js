@@ -6,7 +6,7 @@ module.exports = {
   once: false,
   async execute(message, client) {
     function checkStaffRole() {
-      if (message.member?.roles.cache.has('staff+') || message.member?.roles.cache.has('staff++')) {
+      if (message.member?.roles.cache.has('925165680184164352') || message.member?.roles.cache.has('990796816222150708')) {
         return true;
       } else {
         return false;
@@ -17,12 +17,12 @@ module.exports = {
     if (message.channel.id == '946817316308541440' || message.channel.id == '925162866502430758' || message.channel.id == '925165530401370143') return;
     if (checkStaffRole() === true) return;
 
-    if (message.content.includes("discord.gg") && message.content !== "discord.gg/cosmicpe") {
+    if (message.content.includes("discord.gg" , "https://") && message.content !== "discord.gg/cosmicpe") {
       message.delete();
       message.channel.send(`<:cross:883326239341965332> | ${message.author}, please do not advertise other servers.`);
     }
 
-    const blockedWords = ["nig","nigger","niggeer","niggger","niggerrr","negro","nigga","ngga","nggga","kys","kill yourself","retard", "faggot","fagot","feg","fgt","faag","faggott","fagot","fatass","gangbang","genital","genitalia", "kkk","ku kux","molest","nazi","rape","raip","rapist","rappe","rapee","raape","rapisst","chigga","ching","chong"];
+    const blockedWords = ["nig","nigger","niggeer","niggger","niggerrr","negro","nigga","ngga","nggga","kys","kill yourself","retard", "faggot","fagot","feg","fgt","faag","faggott","fagot","fatass","gangbang","genital","genitalia", "kkk","ku kux","molest","nazi","rape","raip","rapist","rappe","rapee","raape","rapisst","chigga","ching","chong", "anal", "cunt", "dick", "dyke", "prick", "jizz", "scrotum", "blowjob", "slut", "s1ut", "sh!t", "whore", "ASS" , "stfu", "STFUU"];
         
     for (let i = 0; i < blockedWords.length; i++) {
       for (let x = 0; x < message.content.split(" ").length; x++) {

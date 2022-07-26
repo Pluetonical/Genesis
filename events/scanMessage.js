@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const config = require("../config.js");
 
-//Ping Hippo/Pat if isses with this file
+//Ping Juan if issues with this file
 module.exports = {
   name: "messageCreate",
   once: false,
@@ -11,7 +11,7 @@ module.exports = {
         
     const ipMessage = ["?", "port", "ip"];
     const disconnectedMessage = ["disconnected"];
-    const uaMessage = ["unfair", "advantage"];
+    const uaMessage = ["java", "java.utl.concurrent.timeoutexception"];
     const rankMessage = ["rank"];
     const reportMessage = ["hacking"];
         
@@ -98,25 +98,25 @@ module.exports = {
         
     if (confidence.ua > MIN_REQUIRED_CONFIDENCE.ua) {
       embeds.push(new MessageEmbed()
-        .setTitle("Getting kicked for \"unfair advantage\"?")
+        .setTitle("Getting kicked for \"java.utl.concurrent.timeoutexception\"?")
         .setColor("#2F3136")
-        .setDescription("This occurs when you're clicking over the CPS limit (20). If your mouse double clicks, you can use [DCPrevent](https://cdn.discordapp.com/attachments/753424935006896200/826518141416374292/dcPrevent_1_0_0_3.rar) to prevent your mouse from double clicking.")
+        .setDescription("This occurs when the server is usually offline. The server may appear offline but isn't. You may use !status to check the ingame server.")
         .setFooter(`Confidence: ${confidence.ua}% - React if this was helpful`));
     }
         
     if (confidence.dc > MIN_REQUIRED_CONFIDENCE.dc) {
       embeds.push(new MessageEmbed()
         .setTitle("Getting constantly disconnected?")
-        .setColor("#ffcd00")
-        .setDescription("This occurs when you're trying to join a region too quickly. Try waiting in the hub for 10 or so seconds then joining a region.")
+        .setColor("#2F3136")
+        .setDescription("This may occur for a multilitude of reasons, new features are being added, bug may have been found, or server is restarting.")
         .setFooter(`Confidence: ${confidence.dc}% - React if this was helpful`));
     }
         
     if (confidence.hax > MIN_REQUIRED_CONFIDENCE.hax) {
       embeds.push(new MessageEmbed()
         .setTitle("Found a player breaking Genesis's rules?")
-        .setColor("#ffcd00")
-        .setDescription("Please head over to <#874580203576373288> and follow the pinned message's instructions. A staff member will look at the report as soon as they can.")
+        .setColor("#2F3136")
+        .setDescription("Please head over to <#925165041014149140> and open a support ticket. Make sure to give any information you can so staff can help!")
         .setFooter(`Confidence: ${confidence.hax}% - React if this was helpful`));
     }
         

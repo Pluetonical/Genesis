@@ -71,13 +71,13 @@ module.exports = {
       .setTitle("Create Ticket")
       .setColor("#2F3136")
       .setThumbnail(config.logo)
-      .setDescription("**OPEN A TICKET TO:**\n<:icons_Correct:995546257923768380> Recieve Support From Staff\n<:icons_Correct:995546257923768380> Apply for Partnership\n<:icons_Correct:995546257923768380> Appeal a punishment\n<:icons_Correct:995546257923768380> Claim a Giveaway \n\n__**DONT**__ **OPEN A TICKET FOR:**\n<:icons_Wrong:995545123142254612> Ask about your application\n<:icons_Wrong:995545123142254612> Ask for permissions\n <:icons_Wrong:995545123142254612> Annoy staff members\n\nMake sure to fill out any information you can when opening a ticket.");
+      .setDescription("**OPEN A TICKET TO:**\n<:icons_Correct:995546257923768380> Recieve Support From Staff\n<:icons_Correct:995546257923768380> Apply for Partnership\n<:icons_Correct:995546257923768380> Appeal a punishment\n<:icons_Correct:995546257923768380> Claim a Giveaway \n\n__**DONT**__ **OPEN A TICKET FOR:**\n<:icons_Wrong:995545123142254612> Ask about your application\n<:icons_Wrong:995545123142254612> Ask for permissions\n<:icons_Wrong:995545123142254612> Annoy staff members\n\nMake sure to fill out any information you can when opening a ticket.");
       
     
 
     if (interaction.isSelectMenu()) {
       if (interaction.values[0] === "support") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -152,9 +152,9 @@ module.exports = {
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true }); //#2F3136
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** support-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("#2F3136").setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** support-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
             channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__SUPPORT__**").setDescription("Please describe your issue/query here, a staff member will be with you shortly.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
@@ -162,7 +162,7 @@ module.exports = {
       }
 
       /*if (interaction.values[0] === "smp") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -201,17 +201,17 @@ module.exports = {
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
             client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** smp-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__SUPPORT__**").setDescription("Please describe your issue/query here, a staff member will be with you shortly.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__SUPPORT__**").setDescription("Please describe your issue/query here, a staff member will be with you shortly.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
       **/
       if (interaction.values[0] === "appeal") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -288,7 +288,7 @@ module.exports = {
           }).then(channel => {
             interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** appeal-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("#2F3136").setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** appeal-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
             channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__PUNISHMENT APPEAL__**").setDescription("You may make an appeal / apology here. Please remain patient until a staff member reviews your appeal, If you think you were innocent please provide us with some evidence of you proving so.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
@@ -296,7 +296,7 @@ module.exports = {
       }
       /*
       if (interaction.values[0] === "builder") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -335,16 +335,16 @@ module.exports = {
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__BUILDER APPLICATION__**").setDescription("Please be patient, a head builder will be with you shortly.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__BUILDER APPLICATION__**").setDescription("Please be patient, a head builder will be with you shortly.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
       
       if (interaction.values[0] === "famous") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -383,17 +383,17 @@ module.exports = {
             }
             ]
           }).then(channel => {
-            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
+            interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`✅\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
             client.channels.cache.get('997002387334119444').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:atlanta_folder:601019084468912129> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** famous-${(no).pad(4)}\n**Status:** ❌ Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
-            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#fec900").setTitle("**__MEDIA+ RANK APPLICATION__**").setDescription("Please send us your genesis-exclusive video and please be patient while a staff member checks your application, please make sure you meet the following requirements:\n\n• 1,500 subscribers\n• 1000 views in your last 5 videos\n• A video on genesis every 5 months\n• Must not have hacking related content").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
+            channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__MEDIA+ RANK APPLICATION__**").setDescription("Please send us your genesis-exclusive video and please be patient while a staff member checks your application, please make sure you meet the following requirements:\n\n• 1,500 subscribers\n• 1000 views in your last 5 videos\n• A video on genesis every 5 months\n• Must not have hacking related content").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
         });
       }
 
       if (interaction.values[0] === "media") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -442,7 +442,7 @@ module.exports = {
       **/
 
       if (interaction.values[0] === "giveaway") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -519,7 +519,7 @@ module.exports = {
           }).then(channel => {
             interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** giveaway-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("2F3136").setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** giveaway-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
             channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__CLAIM GIVEAWAY PRIZE__**").setDescription("Please send us your username, a staff member will review your ticket soon.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
@@ -527,7 +527,7 @@ module.exports = {
       }
 
       if (interaction.values[0] === "store") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -604,7 +604,7 @@ module.exports = {
           }).then(channel => {
             interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** store-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("2F3136").setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** store-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
             channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__CLAIM STORE ITEM__**").setDescription("Please send us your username along with what item you need assistance with, a staff member will review your ticket soon.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
@@ -659,7 +659,7 @@ module.exports = {
       
 
       if (interaction.values[0] === "partnership") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("ticketno.txt", function(err, data) {
@@ -736,7 +736,7 @@ module.exports = {
           }).then(channel => {
             interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription(`\`<:icons_Correct:995546257923768380>\` Ticket <#${channel.id}> has been opened`)], ephemeral: true });
             interaction.message.edit({ embeds: [embed], components: [row] });
-            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor(0xffcd00).setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** partnership-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
+            client.channels.cache.get('998720984846700664').send({ content: `<#${channel.id}>`, embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("2F3136").setDescription(`**Opened by:** ${interaction.user.tag}\n**Ticket:** partnership-${(no).pad(4)}\n**Status:** <:icons_Wrong:995545123142254612> Unclaimed`).setFooter(channel.id).setTimestamp()], components: [claim] });
             channel.send({ content: `<@${interaction.user.id}>` }).then(sent => sent.delete());
             channel.send({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setTitle("**__APPLY FOR PARTNERSHIP__**").setDescription("Please send us your event detail, type of the event, plan for the event, estimate number of attender, and other related information.").setFooter(`Ticket opened by ${interaction.user.tag} | ${interaction.user.id}`).setTimestamp()], components: [button] });
           });
@@ -746,7 +746,7 @@ module.exports = {
 
     if (interaction.isButton()) {
       if (interaction.customId === "staffticket") {
-        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#fcd403").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
+        if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
 
         fs.readFile("staffticketno.txt", function(err, data) {
@@ -826,7 +826,7 @@ module.exports = {
       }
 
       if (interaction.customId === "claim_ticket") {
-        interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("#2F3136").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status:** ✅ Claimed by ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [claimed] });
+        interaction.update({ embeds: [new Discord.MessageEmbed().setTitle("<:icons_folder:995548354530517142> New Ticket").setColor("#2F3136").setDescription(interaction.message.embeds[0].description.replace(interaction.message.embeds[0].description.split("\n").slice(-1).toString(), `**Status:** <:icons_Correct:995546257923768380> Claimed by ${interaction.user.tag}`)).setFooter(interaction.message.embeds[0].footer.text).setTimestamp()], components: [claimed] });
 
         const connection = mysql.createConnection({
           host: config.mysqlCredentials.host,

@@ -63,7 +63,7 @@ module.exports = {
 
     if (!cmd) return;
 
-    if (cmd && cmd.conf.guildOnly && message.guild.id != '997001983875616788') 
+    if (cmd && cmd.conf.guildOnly && message.guild.id != '925160468476207114') 
     return message.channel.send(" Please run this command in Genesis Network instead - discord.gg/cosmicpe");
     //bot role id = 990796816222150708
    
