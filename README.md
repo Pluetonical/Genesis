@@ -1,3 +1,3 @@
-## HEAD DEV - JUAN
-# TRAINEE - JACKSON
+## HEAD DEV - JUAN & Jackson
+# TRAINEE - Luna
 ^
