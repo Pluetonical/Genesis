@@ -1,2 +1,2 @@
-## HEAD DEV - JUAN
-# TRAINEE - JACKSON
+## sum is a nigger 
+# sum is a nigger
