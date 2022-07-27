@@ -68,7 +68,7 @@ const init = async () => {
   ticketOpenCooldown = [];
 
   client.on("threadCreate", (thread) => thread.join());
-  client.login('MTAwMDExNjI0OTUwMzc0MDA3NQ.Gmnh4x.hbQz4WiuBZuSyZl_ASwBFh038yXSVdLf_qg8T4');
+  client.login('OTk1OTE4MTYzMTM5MTEzMDAx.GsCAl1.9FPVS9-f4wvxLu1l2aIdIAthdf098L5NFRNEgs');
 };
 init()
 // Login to Discord with your client's token
