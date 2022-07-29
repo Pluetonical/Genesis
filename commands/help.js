@@ -1,6 +1,7 @@
 const { toProperCase } = require("../modules/functions.js");
-const { MessageEmbed } = require("discord.js");
+//const { MessageEmbed } = require("discord.js");
 const config = require("../config.js");
+const { Embed } = require("discord.js");
 
 exports.run = (client, message, args, level) => {
   const { container } = client;
@@ -30,6 +31,7 @@ exports.run = (client, message, args, level) => {
       .setColor("#2F3136")
       .setDescription(output)
       .setTimestamp();
+    
 
     message.reply({ embeds: [embed] });
   } else {

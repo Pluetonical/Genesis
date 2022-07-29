@@ -26,9 +26,9 @@ const permLevels = [{
 },
 ]
 
- const partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_SCHEDULED_EVENT', 'GUILD_MEMBER', 'USER', 'CHANNEL']
+ 
 const { Client, Intents } = require('discord.js');
-const intents = [Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGE_TYPING, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_BANS, Intents.FLAGS.GUILD_MESSAGES]
+
 const Guild = '994810515446575177'
 const channel = [{
     rankSyncChannel: '996156218282356777'

@@ -4,6 +4,7 @@ const config = require("../config.js");
 const fs = require("fs");
 const mysql = require("mysql");
 const { createTranscript } = require("discord-html-transcripts");
+const { InteractionType } = require("discord.js");
 
 module.exports = {
   name: "interactionCreate",
@@ -18,17 +19,17 @@ module.exports = {
 
   
 
-    const button = new Discord.MessageActionRow().addComponents(
-      new Discord.MessageButton().setCustomId("close_ticket").setLabel("Close Ticket").setStyle("DANGER")
+    const button = new Discord.ActionRowBuilder().addComponents(
+      new Discord.ButtonBuilder().setCustomId("close_ticket").setLabel("Close Ticket").setStyle("DANGER")
     );
-    const claim = new Discord.MessageActionRow().addComponents(
-      new Discord.MessageButton().setCustomId("claim_ticket").setLabel("Claim").setStyle("SUCCESS")
+    const claim = new Discord.ActionRowBuilder().addComponents(
+      new Discord.ButtonBuilder().setCustomId("claim_ticket").setLabel("Claim").setStyle("SUCCESS")
     );
-    const claimed = new Discord.MessageActionRow().addComponents(
-      new Discord.MessageButton().setCustomId("claim_ticket").setLabel("Claim").setStyle("SUCCESS").setDisabled(true)
+    const claimed = new Discord.ActionRowBuilder().addComponents(
+      new Discord.ButtonBuilder().setCustomId("claim_ticket").setLabel("Claim").setStyle("SUCCESS").setDisabled(true)
     );
 
-    const row = new Discord.MessageActionRow().addComponents(new Discord.MessageSelectMenu()
+    const row = new Discord.ActionRowBuilder().addComponents(new Discord.SelectMenuBuilder()
       .setCustomId("ticketselection")
       .setPlaceholder("Select an Option (1-5)")
       .setMaxValues(1)
@@ -67,7 +68,7 @@ module.exports = {
       ])
     );
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.EmbedBuilder()
       .setTitle("Create Ticket")
       .setColor("#2F3136")
       .setThumbnail(config.logo)
@@ -76,6 +77,7 @@ module.exports = {
     
 
     if (interaction.isSelectMenu()) {
+      console.log(interaction.values)
       if (interaction.values[0] === "support") {
         if ((Date.now() - (ticketOpenCooldown[interaction.user.id] ? ticketOpenCooldown[interaction.user.id] : 0)) <= 10 * 60 * 1000) return interaction.reply({ embeds: [new Discord.MessageEmbed().setColor("#2F3136").setDescription("You need to wait 10 minutes until you can open another ticket!")], ephemeral: true });
         ticketOpenCooldown[interaction.user.id] = Date.now();
