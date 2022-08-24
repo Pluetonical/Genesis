@@ -1,5 +1,5 @@
 // Require the necessary discord.js classes
-const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
 const logger = require('./modules/Logger.js')
 const { readdirSync } = require("fs");
 const EventEmitter = require('events');
@@ -26,7 +26,7 @@ const permLevels = [{
 ]
 // Create a new client instance
 
-const client = new Client({ intents: [GatewayIntentBits.DirectMessages, GatewayIntentBits.DirectMessageReactions, GatewayIntentBits.DirectMessageTyping, GatewayIntentBits.Guilds, GatewayIntentBits.GuildBans, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildEmojisAndStickers, GatewayIntentBits.GuildMembers], partials: [Partials.Message, Partials.Channel, Partials.Reaction, Partials.GuildScheduledEvent, Partials.GuildMember, Partials.User]});
+const client = new Client({ intents: [Intents.FLAGS.DIRECT_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGE_TYPING, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_BANS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_INVITES]});
 //const commands = new Collection();
 
 
@@ -69,7 +69,7 @@ const init = async () => {
   ticketOpenCooldown = [];
 
   client.on("threadCreate", (thread) => thread.join());
-  client.login('OTk1OTE4MTYzMTM5MTEzMDAx.GsCAl1.9FPVS9-f4wvxLu1l2aIdIAthdf098L5NFRNEgs');
+  client.login('OTk1OTE4MTYzMTM5MTEzMDAx.GV2XL1.EygkPQa4tcmOHVg8NaBKdO-v7hIEynlm-Tjx6c');
 };
 init()
 // Login to Discord with your client's token

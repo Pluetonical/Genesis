@@ -1,1 +1,1 @@
-{"version":"1.0.0","name":"genesis-gae","dependencies":{"discord-html-transcripts":{"version":"2.6.0"},"discord.js":{"version":"14.0.3"},"enmap":{"version":"5.9.0"},"mysql":{"version":"2.18.1"},"quick.db":{"version":"9.0.5"},"request":{"version":"2.88.2"}}}
+{"version":"1.0.0","name":"genesis-gae","dependencies":{"discord.js":{"version":"13.10.2"}}}

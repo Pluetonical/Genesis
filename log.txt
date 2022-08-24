@@ -859,3 +859,125 @@ Role added: [Username: undefined, UserID: 433324039495483394, Role: 925165735288
 Role added: [Username: undefined, UserID: 433324039495483394, Role: 925165735288901683]
 Role added: [Username: undefined, UserID: 793709512598487091, Role: 925165735288901683]
 Role added: [Username: undefined, UserID: 793709512598487091, Role: 925165735288901683]
+Message Delete: [ Username: "SumXProve#5962", User Id: "394612443927805954", Content: "^ press the star", Channel: "925164747014426675" ]
+Message Delete: [ Username: "Genesis Utilities#9659", User Id: "995918163139113001", Content: "", Channel: "925164747014426675" ]
+Message Delete: [ Username: "JackInTheBox Slut#0421", User Id: "583772029228941334", Content: "s", Channel: "969746835595993138" ]
+Message Delete: [ Username: "Genesis Utilities#9659", User Id: "995918163139113001", Content: "<:icons_activities:995546445618884659> | Thank you! Your bug report has been successfully recorded!", Channel: "969746835595993138" ]
+Message Delete: [ Username: "Genesis Utilities#9659", User Id: "995918163139113001", Content: "", Channel: "969746835595993138" ]
+Message Delete: [ Username: "Genesis Utilities#9659", User Id: "995918163139113001", Content: "Evidence: undefined", Channel: "969746835595993138" ]
+Message Delete: [ Username: "Genesis Utilities#9659", User Id: "995918163139113001", Content: "", Channel: "925165041014149140" ]
+Message Delete: [ Username: "Genesis Utilities#9659", User Id: "995918163139113001", Content: "", Channel: "925165041014149140" ]
+Message Delete: [ Username: "Juanito#1234", User Id: "817519122895339590", Content: "!suggest gay", Channel: "925163712430628885" ]
+Message Delete: [ Username: "JackInTheBox Slut#0421", User Id: "583772029228941334", Content: "!suggest Make juan gay", Channel: "1004741827263479909" ]
+Message Delete: [ Username: "JackInTheBox Slut#0421", User Id: "583772029228941334", Content: "!suggest", Channel: "1004741827263479909" ]
+Role Deleted: [ Role Id: 1008154900913467475, Role: Cronus]
+Role added: [Username: undefined, UserID: 793778483608027157, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 668730611447496724, Role: 925165735288901683]
+Role removed: [Username: undefined, UserID: 817519122895339590, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 817519122895339590, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 996331057156718643, Role: 925165735288901683]
+Role Create: [ RoleID: 1009263071035916384, Role: Saturn Security]
+Message Delete: [ Username: "Frijolito#9269", User Id: "878459992687149076", Content: "<@394612443927805954> fix the misspelling", Channel: "925160468476207117" ]
+Role added: [Username: undefined, UserID: 782118358123806720, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 745703076551196682, Role: 925165735288901683]
+Message Delete: [ Username: "IndiegenousDwarf2#6910", User Id: "887313044726767616", Content: "!suggest add multi-versio", Channel: "925160468476207117" ]
+Message Delete: [ Username: "IndiegenousDwarf2#6910", User Id: "887313044726767616", Content: "!suggest add multi-version cause alot of ppl havent updated their pcs", Channel: "925160468476207117" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest make some ces have higher chance to get, like famine from unique ces, i get 1 per 2 stacks of books. and also remove the dummy ce (simple)", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest make that you can combine 2 books with the same name into a better % book with higher levels. (as example, overload 2 30% + overload 2 60% --> overload 3 90%)", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest disable tnt for the first week/ first 2 weeks", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Genesis Utilities#9659", User Id: "995918163139113001", Content: "", Channel: "997638155412975697" ]
+Role removed: [Username: undefined, UserID: 853395771701592076, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 853395771701592076, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 706930327553310811, Role: 925165735288901683]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls use bbe", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls with 500k", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls rob Mcleafy#8855", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls rob", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls rob Veq#9052", Channel: "925163712430628885" ]
+Role added: [Username: undefined, UserID: 404526335504154637, Role: 925165735288901683]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "@𝑐̶ℎ̶𝑎̶𝑜̶𝑠̶#3237 I broke the passive", Channel: "925163712430628885" ]
+Role added: [Username: undefined, UserID: 902709152399388712, Role: 925165735288901683]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls rob Jeshua#0927", Channel: "925163712430628885" ]
+Role added: [Username: undefined, UserID: 695891310770389063, Role: 925165735288901683]
+Message Delete: [ Username: "𝑐̶ℎ̶𝑎̶𝑜̶𝑠̶#3237", User Id: "404526335504154637", Content: "<@751489371944779816> ∆Rainny#1362", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Use ake", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "<@902709152399388712>", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "S", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls use cell", Channel: "925163712430628885" ]
+Message Delete: [ Username: "☞||عامر       ☞عامر||♬||Aamir||〆#7723", User Id: "706930327553310811", Content: "Pls use ake", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Juanito#1234", User Id: "817519122895339590", Content: "I’m slamming Zion’s server on release", Channel: "925164571822522439" ]
+Message Delete: [ Username: "Juanito#1234", User Id: "817519122895339590", Content: "I know that’s because I doxxed and ddosed zion to 6ft under so now he cried to super for protection", Channel: "925164571822522439" ]
+Message Delete: [ Username: "Juanito#1234", User Id: "817519122895339590", Content: "Varia from 60 players sotw now whitelisted and lost data because of my attacks", Channel: "925164571822522439" ]
+Message Delete: [ Username: "Juanito#1234", User Id: "817519122895339590", Content: "Varia is also being slammed by me rn", Channel: "925164571822522439" ]
+Message Delete: [ Username: "SumXProve#5962", User Id: "394612443927805954", Content: "So no one leaks it", Channel: "925164571822522439" ]
+Message Delete: [ Username: "SumXProve#5962", User Id: "394612443927805954", Content: "😂", Channel: "925164571822522439" ]
+Message Delete: [ Username: "SumXProve#5962", User Id: "394612443927805954", Content: "<@817519122895339590> delete that out this chat tho", Channel: "925164571822522439" ]
+Role removed: [Username: undefined, UserID: 583772029228941334, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 583772029228941334, Role: 925165735288901683]
+Role added: [Username: undefined, UserID: 670405018527989780, Role: 990796816222150708]
+Role added: [Username: undefined, UserID: 670405018527989780, Role: 943901471282450452]
+Role added: [Username: undefined, UserID: 670405018527989780, Role: 925165680184164352]
+Role added: [Username: undefined, UserID: 761382003748503563, Role: 925165735288901683]
+Message Delete: [ Username: "X2FT_#9015", User Id: "848628672793542717", Content: "<:realmessi:928154905049440296>", Channel: "925164571822522439" ]
+Message Delete: [ Username: "Chxrry#8447", User Id: "829813834142449695", Content: "do y’all want trap tips?", Channel: "925160468476207117" ]
+Message Delete: [ Username: "X2FT_#9015", User Id: "848628672793542717", Content: "", Channel: "925164571822522439" ]
+Message Delete: [ Username: "X2FT_#9015", User Id: "848628672793542717", Content: "", Channel: "925164571822522439" ]
+Message Delete: [ Username: "XxcdahxX#0567", User Id: "786052987419099186", Content: "nig", Channel: "925164571822522439" ]
+Message Delete: [ Username: "Valernt#9613", User Id: "853395771701592076", Content: "!ranj", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest Death's scythe (admin item)(diamond hoe)
+sharpness 10, (16.5 damage)
+fire aspect 1, unbreaking 5
+(reaper set)20% chance to heal 2x from lifesteal and block lifesteal from enemies, deals 20% more damage and take 15% less damage", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest Phantom cloak (admin item)(diamond plate)
+prot 5, unbreaking 5
+Ability : Phantasm, 5% chance to be invisible (not full invis) and be invulnerable to any kind of damage for 2 seconds.
+take 15% less damage and do 5% less damage", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest Hawk's Eye (bow)(admin item)
+(ranger set) unbreaking 5 power 8 flame, infinity
+set bonus: deal 20% more damage, and take 15% less damage after hitting the target with fully charged bow
+Ability: Teleblock : After hitting target with fully charged bow, they will be unable to throw ender pearls or use ender pearls (including statis chambers wont work)
+Ability: Ranger's Cloak : after hitting target with fully charged hit, you would be full invis for 2 seconds (5 second cd)", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest New ce : Defender : Gives permenant res 1- res 3 (ultimate ce)", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest new ce : Scrambled (max level 5) (sword ce) , has 2.5+ level % to make the target's current held item switched positions with another item in their hotbar.", Channel: "925163712430628885" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest new ce: Dive: (legendary), while your head is in water, you do +25% damage.
+
+(heroic version) Deep Dive: (heroic), while your head is in water, you do +25% damage and take 25% less damage.", Channel: "925163712430628885" ]
+Role added: [Username: undefined, UserID: 997193795802243114, Role: 925165735288901683]
+Role Edited: [ Old Role Id: 1008840555607887963, Old Role: Bots, New Role Id: 1008840555607887963, New Role: Bots]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "!suggest new pickaxe enchant: KeyFinder (mastery)(max lvl is 10)
+has 10+(9xlevel)% chance to get an extra key while mining a block (gives 3 extra keys if level 10)", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Stellarbreak126#7470", User Id: "897942242034085960", Content: "!s", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Stellarbreak126#7470", User Id: "897942242034085960", Content: "!suggest New Ce: LootBox Finder (Godly Ce) Has a 0.10% chance of finding any LootBox that u add.", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Stellarbreak126#7470", User Id: "897942242034085960", Content: ".suggestion New Ce: LootBox Finder (Godly Ce) Has a 0.10% chance of finding any LootBox that u add.", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Stellarbreak126#7470", User Id: "897942242034085960", Content: "!suggestion New Ce: LootBox Finder (Godly Ce) Has a 0.10% chance of finding any LootBox that u add.", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Stellarbreak126#7470", User Id: "897942242034085960", Content: "Pls bal <@394612443927805954>", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Stellarbreak126#7470", User Id: "897942242034085960", Content: "Pls rob <@394612443927805954>", Channel: "925163712430628885" ]
+Message Delete: [ Username: "Community Updates#0000", User Id: "987462520434462740", Content: "Hey Admins and Moderators,
+
+We've got an update on all things Community today!
+
+If you haven't joined our Discord Admin Community… what are you waiting for? Head over to **Server Setting > Community overview** and join us — we've got a slew of exciting and fun stuff planned that you won’t want to miss out on.
+
+🪴 __*Below is a sneak peek at the Stage events we’ve got cookin’!*__
+
+<:dot:958824443445116960> August 16th: Safety on Discord
+<:dot:958824443445116960> August 25th: Utilizing Automod in your Community
+
+To join our Discord Admin Community, your server will need to hit a few engagement requirements. Once your community reaches the requirements listed <https://dis.gd/DAC-FAQ>, any of your Admins or Moderators with the “Manage Server” permission will be able to join the Discord Admin Community via Server Settings > Community.
+
+📚 __**Community Resources**__
+We recently released our Community Resources, a one-stop shop for learning how to build, engage, grow, and manage a space where anyone can belong. New articles, showcases, and more will be added in the future, so be sure to bookmark it for later. <https://dis.gd/Community_Resources>
+
+If you haven't already taken a peek at some of our content, you can check out the latest video! https://dis.gd/H2M_Your_Discord_Community
+
+🤖 **__Apps & Bots__**
+If your server uses a **verified app**, the way you send commands has probably changed in the last year - if it hasn’t, it may very soon! Developers of verified apps have been migrating to Slash Commands. The deadline to finish migrating is the end of August, which means on Sept 1, any apps that haven’t finished may have reduced functionality.
+
+If you haven’t tried out slash commands yet, type / in your server to see all the commands you have access to. If your favorite app isn’t listed, they may not yet have enabled slash commands. Or, you might need to check out the new permissions system in **Server Settings > Integrations.**
+
+If you run across any issues, you can reach out to individual app developers to find out more. Learn more here: <https://discord.com/blog/welcome-to-the-new-era-of-discord-apps>", Channel: "925164644249776178" ]
+Message Delete: [ Username: "SumXProve#5962", User Id: "394612443927805954", Content: "**@everyone**
+At 65 Reactions We release RN", Channel: "1003137366082453565" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "guysss", Channel: "925160468476207117" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "REACT TO <#1003137366082453565> for release", Channel: "925160468476207117" ]
+Message Delete: [ Username: "F.#4958", User Id: "999204808005255269", Content: "imma use some alts ig", Channel: "925160468476207117" ]
